@@ -123,7 +123,7 @@ public class ManagingADailyPlanner {
 
             if (taskList.size() > 0) {
                 System.out.println(String.format(displayFormat, "NUM", "TITLE", "PROJECT", "DESCRIPTION", "TypesOfTasks", "DUE DATE", "COMPLETED"));
-                System.out.println(String.format(displayFormat, "===", "=====", "=======", "===============", "========", "============", "========="));
+                System.out.println(String.format(displayFormat, "===", "=====", "=======", "=========", "========", "============", "========="));
             } else {
                 System.out.println(Messages.RED_TEXT + "Задачи отсутствуют" + Messages.RESET_TEXT);
             }
@@ -267,13 +267,10 @@ public class ManagingADailyPlanner {
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(filename);
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-
                 objectOutputStream.writeObject(taskList);
-
                 objectOutputStream.close();
                 fileOutputStream.close();
                 return true;
-
             } catch (Exception e) {
                 Messages.showMessage(e.getMessage(), true);
                 return false;
@@ -281,17 +278,14 @@ public class ManagingADailyPlanner {
         }
 
         public void runTask() {
-
-            Calendar calendar = Calendar.getInstance();
+             Calendar calendar = Calendar.getInstance();
             calendar.set(
                     Calendar.DAY_OF_WEEK,
-                    Calendar.MONDAY
-            );
+                    Calendar.MONDAY);
             calendar.set(Calendar.HOUR_OF_DAY, 15);
             calendar.set(Calendar.MINUTE, 40);
             calendar.set(Calendar.SECOND, 0);
             calendar.set(Calendar.MILLISECOND, 0);
-
             Timer time = new Timer();
             TimeUnit.HOURS.toMillis(24);
         }

@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import javax.swing.JButton;
-
 public class MainWindow {
     public static void main(String[] args) {
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
