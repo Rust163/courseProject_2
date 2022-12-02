@@ -9,11 +9,11 @@ public class Messages {
                 + incompleteTaskCount + " Задача "
                 + Messages.RESET_TEXT + " и " + Messages.GREEN_TEXT
                 + completedTaskCount + " выполненная задача\n" + Messages.RESET_TEXT);
-        System.out.println("Выберите вариант:");
+        System.out.println("Выберите вариант:\n");
         System.out.println("1. Показать список задач (по дате или проекту)");
         System.out.println("2. Добавить новую задачу");
         System.out.println("3. Редактировать задачу (обновить, отметить как выполненную, удалить)");
-        System.out.println("4. Сохранить и выйти\n");
+        System.out.println("4. Сохранить и выйти");
         System.out.println("5. Период задачи ");
         System.out.print("Пожалуйста, укажите свой выбор 1-5: ");
     }

@@ -1,7 +1,8 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
-    public static String filename = "Задача";
-    public static void main(String args[]) {
+    public static void main(String[] args) {
+        String filename = "Задача";
         ManagingADailyPlanner todoList = new ManagingADailyPlanner();
         String menuChoice = "-17";
         try {
@@ -42,7 +43,7 @@ public class Main {
             System.out.println("Сохраните данные перед записью в файл данных!");
             todoList.saveToFile(filename);
             System.out.println(e.getMessage());
-            System.out.println(e.getStackTrace());
+            System.out.println(Arrays.toString(e.getStackTrace()));
         }
     }
 }

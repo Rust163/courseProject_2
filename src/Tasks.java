@@ -62,15 +62,12 @@ public class Tasks implements Serializable {
         return dueDate;
     }
     public void setDueDate(LocalDate dueDate) throws DateTimeException {
-        // Выдает исключение DateTimeException, если задана прошедшая дата
         if (dueDate.compareTo(LocalDate.now()) < 0) {
             throw new DateTimeException("Прошедшая дата не допускается");
         }
-
         DateTimeFormatter formattedDate = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.dueDate = LocalDate.parse(dueDate.format(formattedDate));
     }
-
     public String formattedStringOfTasks() {
         return (
                         "\nЗадача     : " + title +
